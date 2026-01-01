@@ -4,7 +4,7 @@ from app.database import get_db
 from app.models.products import Product
 from app.Schemas.products_schemas import ProductBase,CreateProduct,ProductResponse
 
-router = APIRouter(prefix="/products", tags=['products'])
+router = APIRouter(prefix="/greencart", tags=['products'])
 
 @router.post("/", response_model=ProductResponse, status_code=status.HTTP_201_CREATED)
 def create_product(product: CreateProduct, db: Session = Depends(get_db)):
